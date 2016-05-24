@@ -19,36 +19,36 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.wso2.carbon.analytics.shared</groupId>
-	<artifactId>shared-analytics</artifactId>
-	<packaging>pom</packaging>
-	<version>1.0.1-SNAPSHOT</version>
-	<name>WSO2 Shared Analytics - Aggregator Module</name>
-	<url>http://wso2.com/products/api-manager</url>
-	<description>WSO2 Analytics for API Manager</description>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.carbon.analytics.shared</groupId>
+    <artifactId>shared-analytics</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.1-SNAPSHOT</version>
+    <name>WSO2 Shared Analytics - Aggregator Module</name>
+    <url>http://wso2.com/products/api-manager</url>
+    <description>WSO2 Analytics for API Manager</description>
 
-	<parent>
-		<groupId>org.wso2</groupId>
-		<artifactId>wso2</artifactId>
-		<version>1</version>
-	</parent>
+    <parent>
+        <groupId>org.wso2</groupId>
+        <artifactId>wso2</artifactId>
+        <version>1</version>
+    </parent>
 
-	<scm>
-		<url>https://github.com/wso2/shared-analytics.git</url>
-		<developerConnection>scm:git:https://github.com/wso2/shared-analytics.git</developerConnection>
-		<connection>scm:git:https://github.com/wso2/shared-analytics.git</connection>
-		<tag>HEAD</tag>
-	</scm>
+    <scm>
+        <url>https://github.com/wso2/shared-analytics.git</url>
+        <developerConnection>scm:git:https://github.com/wso2/shared-analytics.git</developerConnection>
+        <connection>scm:git:https://github.com/wso2/shared-analytics.git</connection>
+        <tag>HEAD</tag>
+    </scm>
 
-	<licenses>
-		<license>
-			<name>Apache License Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
-		</license>
-	</licenses>
+    <licenses>
+        <license>
+            <name>Apache License Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
 
-	<modules>
+    <modules>
         <module>components/log-analyzer</module>
         <module>components/filetail</module>
         <module>components/log4j</module>
@@ -59,9 +59,9 @@
         <module>features/log4j</module>
         <module>features/spark-udf</module>
         <module>features/util</module>
-	</modules>
+    </modules>
 
-	<repositories>
+    <repositories>
         <repository>
             <id>wso2-nexus</id>
             <name>WSO2 internal Repository</name>
@@ -96,9 +96,9 @@
                 <enabled>false</enabled>
             </releases>
         </repository>
-	</repositories>
+    </repositories>
 
-	<pluginRepositories>
+    <pluginRepositories>
         <pluginRepository>
             <id>wso2.releases</id>
             <name>WSO2 internal Repository</name>
@@ -133,40 +133,40 @@
                 <checksumPolicy>ignore</checksumPolicy>
             </releases>
         </pluginRepository>
-	</pluginRepositories>
+    </pluginRepositories>
 
-	<profiles>
-		<profile>
-			<id>signed-build</id>
-			<activation>
-				<property>
-					<name>sign</name>
-				</property>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-gpg-plugin</artifactId>
-						<version>1.5</version>
-						<executions>
-							<execution>
-								<id>sign-artifacts</id>
-								<phase>verify</phase>
-								<goals>
-									<goal>sign</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
+    <profiles>
+        <profile>
+            <id>signed-build</id>
+            <activation>
+                <property>
+                    <name>sign</name>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.5</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
-	<dependencyManagement>
-		<dependencies>
-			<!-- ************************ START - Vanilla carbon server + DAS style ************* -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- ************************ START - Vanilla carbon server + DAS style ************* -->
             <dependency>
                 <groupId>org.wso2.carbon</groupId>
                 <artifactId>org.wso2.carbon.core</artifactId>
@@ -589,86 +589,86 @@
             </dependency>
             <!--END - Samples Dependencies-->
 
-		</dependencies>
-	</dependencyManagement>
+        </dependencies>
+    </dependencyManagement>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<configuration>
-					<preparationGoals>clean install</preparationGoals>
-					<autoVersionSubmodules>true</autoVersionSubmodules>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-deploy-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
-				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
-				</configuration>
-			</plugin>
-		</plugins>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.felix</groupId>
-					<artifactId>maven-scr-plugin</artifactId>
-					<version>1.7.2</version>
-					<executions>
-						<execution>
-							<id>generate-scr-scrdescriptor</id>
-							<goals>
-								<goal>scr</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.felix</groupId>
-					<artifactId>maven-bundle-plugin</artifactId>
-					<version>2.3.5</version>
-					<extensions>true</extensions>
-					<configuration>
-						<obrRepository>NONE</obrRepository>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-source-plugin</artifactId>
-					<version>2.1.2</version>
-					<executions>
-						<execution>
-							<id>attach-sources</id>
-							<phase>verify</phase>
-							<goals>
-								<goal>jar-no-fork</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-				<plugin>
-					<artifactId>maven-assembly-plugin</artifactId>
-					<version>2.2-beta-2</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-project-info-reports-plugin</artifactId>
-					<version>2.4</version>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <preparationGoals>clean install</preparationGoals>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-scr-plugin</artifactId>
+                    <version>1.7.2</version>
+                    <executions>
+                        <execution>
+                            <id>generate-scr-scrdescriptor</id>
+                            <goals>
+                                <goal>scr</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-bundle-plugin</artifactId>
+                    <version>2.3.5</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <obrRepository>NONE</obrRepository>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>2.1.2</version>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>2.2-beta-2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>2.4</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
-	<properties>
-		<das.release.version>1.0.0-SNAPSHOT</das.release.version>
+    <properties>
+        <das.release.version>1.0.0-SNAPSHOT</das.release.version>
         <analytics.common.version>1.0.1-SNAPSHOT</analytics.common.version>
 
         <carbon.kernel.version>4.4.3</carbon.kernel.version>
@@ -730,25 +730,25 @@
         <apache.common.collection.version>3.2.0.wso2v1</apache.common.collection.version>
         <org.eclipse.osgi.version>3.7.0.v20110613</org.eclipse.osgi.version>
         <version.equinox.osgi.services>3.3.100.v20120522-1822</version.equinox.osgi.services>
-	</properties>
+    </properties>
 
-	<organization>
-		<name>WSO2, Inc.</name>
-		<url>http://wso2.com</url>
-	</organization>
+    <organization>
+        <name>WSO2, Inc.</name>
+        <url>http://wso2.com</url>
+    </organization>
 
-	<issueManagement>
-		<system>JIRA</system>
-		<url>https://wso2.org/jira/browse/APIMANAGER</url>
-	</issueManagement>
+    <issueManagement>
+        <system>JIRA</system>
+        <url>https://wso2.org/jira/browse/APIMANAGER</url>
+    </issueManagement>
 
-	<mailingLists>
-		<mailingList>
-			<name>WSO2 Carbon Developers' List</name>
-			<post>mailto:dev@wso2.org</post>
-			<archive>http://wso2.org/mailarchive/dev/</archive>
-			<subscribe>mailto:dev-request@wso2.org?subject=subscribe</subscribe>
-			<unsubscribe>mailto:dev-request@wso2.org?subject=unsubscribe</unsubscribe>
-		</mailingList>
-	</mailingLists>
+    <mailingLists>
+        <mailingList>
+            <name>WSO2 Carbon Developers' List</name>
+            <post>mailto:dev@wso2.org</post>
+            <archive>http://wso2.org/mailarchive/dev/</archive>
+            <subscribe>mailto:dev-request@wso2.org?subject=subscribe</subscribe>
+            <unsubscribe>mailto:dev-request@wso2.org?subject=unsubscribe</unsubscribe>
+        </mailingList>
+    </mailingLists>
 </project>
