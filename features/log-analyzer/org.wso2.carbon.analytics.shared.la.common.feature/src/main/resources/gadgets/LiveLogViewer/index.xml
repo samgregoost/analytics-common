@@ -36,18 +36,13 @@
 
 
 
-        <script src="modules/la/js/backend-service-invoker.js"></script>
-
         <script src="../gadget-commons/js/jquery-1.10.2.js"></script>
-                <script src="../gadget-commons/js/moment.min.js"></script>
-                <script src="../gadget-commons/js/gadget-utils.js"></script>
-                <script src="../gadget-commons/js/bootstrap-paginator.min.js"></script>
                 <script src="../gadget-commons/js/carbon-analytics.js"></script>
-                <script src="../gadget-commons/js/bootstrap.min.js"></script>
                 <script src="js/Mustache.js"></script>
+                <script src="js/ptty.jquery.min.js"></script>
     </head>
     <body bgcolor="#000000">
-        <div id="logViewer"/>
+        <div id="terminal"/>
 
 
         <script src="js/main.js"></script>

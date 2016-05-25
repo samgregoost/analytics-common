@@ -2,7 +2,7 @@
   "id": "liveLogViewer",
   "title": "Live Log viewer",
   "type": "gadget",
-  "thumbnail": "store://gadget/LogServerUpTimeDistribution/img/thumbnail.png",
+  "thumbnail": "store://gadget/LiveLogViewer/img/thumbnail.png",
   "data": {
     "url": "store://gadget/LiveLogViewer/index.xml"
   },
