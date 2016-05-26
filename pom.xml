@@ -168,6 +168,16 @@
 		<dependencies>
 			<!-- ************************ START - Vanilla carbon server + DAS style ************* -->
             <dependency>
+                <groupId>org.apache.synapse</groupId>
+                <artifactId>synapse-nhttp-transport</artifactId>
+                <version>${synapse.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.synapse</groupId>
+                <artifactId>synapse-core</artifactId>
+                <version>${synapse.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.wso2.carbon</groupId>
                 <artifactId>org.wso2.carbon.core</artifactId>
                 <version>${carbon.kernel.version}</version>
@@ -670,7 +680,7 @@
 	<properties>
 		<das.release.version>1.0.0-SNAPSHOT</das.release.version>
         <analytics.common.version>1.0.1-SNAPSHOT</analytics.common.version>
-
+        <synapse.version>2.1.7-wso2v3-SNAPSHOT</synapse.version>
         <carbon.kernel.version>4.4.3</carbon.kernel.version>
         <analytics.apim.version>1.0.0-SNAPSHOT</analytics.apim.version>
         <carbon.analytics.version>1.0.6-SNAPSHOT</carbon.analytics.version>

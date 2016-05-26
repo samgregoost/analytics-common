@@ -53,6 +53,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import org.apache.synapse.transport.customlogsetter.CustomLogSetter;
 
 public class LogEventAppender extends AppenderSkeleton implements Appender {
     private static final Logger log = Logger.getLogger(LogEventAppender.class);
@@ -211,10 +212,10 @@ public class LogEventAppender extends AppenderSkeleton implements Appender {
                 }
             }
         }
-        appName = CarbonContext.getThreadLocalCarbonContext().getApplicationName();
+        appName = CustomLogSetter.getInstance().getLogAppenderContent();
         tenantEvent.setTenantId(String.valueOf(tenantId));
         if (appName != null) {
-            tenantEvent.setServiceName(CarbonContext.getThreadLocalCarbonContext().getApplicationName());
+            tenantEvent.setServiceName(CustomLogSetter.getInstance().getLogAppenderContent());
         } else if (serviceName != null) {
             tenantEvent.setServiceName(serviceName);
         } else {
