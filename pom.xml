@@ -166,6 +166,47 @@
 		<dependencies>
 			<!-- ************************ START - Vanilla carbon server + DAS style ************* -->
             <dependency>
+                <groupId>org.apache.synapse</groupId>
+                <artifactId>synapse-core</artifactId>
+                <version>${synapse.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.synapse</groupId>
+                <artifactId>synapse-extensions</artifactId>
+                <version>${synapse.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.synapse</groupId>
+                <artifactId>synapse-vfs-transport</artifactId>
+                <version>${synapse.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.synapse</groupId>
+                <artifactId>synapse-tasks</artifactId>
+                <version>${synapse.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.synapse</groupId>
+                <artifactId>synapse-samples</artifactId>
+                <version>${synapse.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.synapse</groupId>
+                <artifactId>synapse-nhttp-transport</artifactId>
+                <version>${synapse.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.synapse</groupId>
+                <artifactId>synapse-commons</artifactId>
+                <version>${synapse.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.synapse</groupId>
+                <artifactId>synapse-fix-transport</artifactId>
+                <version>${synapse.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>org.wso2.carbon</groupId>
                 <artifactId>org.wso2.carbon.core</artifactId>
                 <version>${carbon.kernel.version}</version>
@@ -660,14 +701,14 @@
         <carbon.event-processing.version>2.0.12</carbon.event-processing.version>
         <carbon.dashboard.version>1.0.14</carbon.dashboard.version>
         <carbon.metrics.version>1.2.0</carbon.metrics.version>
-
+        <synapse.version>2.1.7-wso2v3-SNAPSHOT</synapse.version>
         <jaggery.version>0.12.1</jaggery.version>
         <jaggery.modules.carbon.version>1.5.0</jaggery.modules.carbon.version>
         <jaggery.modules.process.version>1.5.0</jaggery.modules.process.version>
         <jaggery.modules.i18n.version>1.5.0</jaggery.modules.i18n.version>
         <sso.feature.version>1.5.1</sso.feature.version>
 
-        <synapse.version>2.1.7-wso2v2</synapse.version>
+
 
         <orbit.version.commons.pool>1.5.6.wso2v1</orbit.version.commons.pool>
         <orbit.version.axiom>1.2.11.wso2v5</orbit.version.axiom>

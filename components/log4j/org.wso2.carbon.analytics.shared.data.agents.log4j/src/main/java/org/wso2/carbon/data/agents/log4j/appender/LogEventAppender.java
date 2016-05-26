@@ -40,6 +40,13 @@ import org.wso2.carbon.utils.CarbonUtils;
 import org.wso2.carbon.utils.logging.TenantAwareLoggingEvent;
 import org.wso2.carbon.utils.logging.handler.TenantDomainSetter;
 import org.wso2.carbon.utils.multitenancy.MultitenantConstants;
+import org.apache.synapse.SynapseException;
+import org.apache.synapse.commons.vfs.FileObjectDataSource;
+import org.apache.synapse.commons.vfs.VFSConstants;
+import org.apache.synapse.core.SynapseEnvironment;
+import org.apache.synapse.inbound.InboundEndpoint;
+import org.apache.synapse.mediators.base.SequenceMediator;
+import org.apache.synapse.transport.customlogsetter.CustomLogSetter;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -213,6 +220,10 @@ public class LogEventAppender extends AppenderSkeleton implements Appender {
         }
         appName = CarbonContext.getThreadLocalCarbonContext().getApplicationName();
         tenantEvent.setTenantId(String.valueOf(tenantId));
+        if(appName == null){
+            appName=
+        }
+
         if (appName != null) {
             tenantEvent.setServiceName(CarbonContext.getThreadLocalCarbonContext().getApplicationName());
         } else if (serviceName != null) {
