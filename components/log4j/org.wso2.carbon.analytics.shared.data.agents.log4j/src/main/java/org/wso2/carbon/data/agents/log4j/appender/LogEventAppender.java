@@ -41,12 +41,19 @@ import org.wso2.carbon.utils.logging.TenantAwareLoggingEvent;
 import org.wso2.carbon.utils.logging.handler.TenantDomainSetter;
 import org.wso2.carbon.utils.multitenancy.MultitenantConstants;
 import org.apache.synapse.SynapseException;
-import org.apache.synapse.commons.vfs.FileObjectDataSource;
-import org.apache.synapse.commons.vfs.VFSConstants;
-import org.apache.synapse.core.SynapseEnvironment;
+import org.apache.synapse.SynapseConstants;
+//import org.apache.synapse.aspects.ComponentType;
+//import org.apache.synapse.aspects.flow.statistics.collectors.OpenEventCollector;
+import org.apache.synapse.core.axis2.Axis2MessageContext;
+import org.apache.synapse.core.axis2.MessageContextCreatorForAxis2;
 import org.apache.synapse.inbound.InboundEndpoint;
+import org.apache.synapse.inbound.InboundEndpointConstants;
+import org.apache.synapse.mediators.MediatorFaultHandler;
 import org.apache.synapse.mediators.base.SequenceMediator;
+import org.apache.synapse.rest.RESTRequestHandler;
 import org.apache.synapse.transport.customlogsetter.CustomLogSetter;
+
+
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -218,14 +225,15 @@ public class LogEventAppender extends AppenderSkeleton implements Appender {
                 }
             }
         }
+     //   MessageContext synCtx = createSynapseMessageContext(request, axis2MsgContext);
         appName = CarbonContext.getThreadLocalCarbonContext().getApplicationName();
         tenantEvent.setTenantId(String.valueOf(tenantId));
         if(appName == null){
-            appName=
+            appName = CustomLogSetter.getInstance().getLogAppenderContent();
         }
 
         if (appName != null) {
-            tenantEvent.setServiceName(CarbonContext.getThreadLocalCarbonContext().getApplicationName());
+            tenantEvent.setServiceName(CustomLogSetter.getInstance().getLogAppenderContent());
         } else if (serviceName != null) {
             tenantEvent.setServiceName(serviceName);
         } else {
