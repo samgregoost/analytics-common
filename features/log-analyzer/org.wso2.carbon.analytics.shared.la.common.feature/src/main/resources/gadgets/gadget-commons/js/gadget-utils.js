@@ -20,9 +20,8 @@
 var PARAM_TYPE = "type";
 
 var serverUrls = [
-    { name: "ESB", svrUrl: "/portal/apis/analytics"},
+    { name: "ESB", svrUrl: "https://"+location.hostname +":"+ location.port +"/admin-dashboard/modules/la/ESBProxy.jag"},
     { name: "APIM", svrUrl: "https://"+location.hostname +":"+ location.port +"/admin-dashboard/modules/la/log-analyzer-proxy.jag"}
-
 ];
 
 function GadgetUtil() {

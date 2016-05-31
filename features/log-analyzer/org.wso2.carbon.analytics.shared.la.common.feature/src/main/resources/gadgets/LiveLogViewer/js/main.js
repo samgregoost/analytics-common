@@ -33,6 +33,20 @@ $(document).ready(function () {
         }
     });
     if(analyticsEnabled){
+         jQuery.ajax({
+                                url: "https://10.100.7.99:9443/portal/controllers/apis/test.jag" + "?type=" + 8,
+                                type: "POST",
+                                success: function (data) {
+                                    console.log(data);
+                                    console.log("succ>>>>>>")
+                                },
+                                error: function (msg) {
+                                console.log(msg)
+                                console.log("fail>>>>>>>>")
+                                //   error(msg[RESPONSE_ELEMENT]);
+                                }
+         });
+
         fetchInitialRecordCount();
     } else {
         $ptty.echo('DAS(Analytics) is not enabled. Please refer <a href="http://wso2.com/library/">documentation</a> ');

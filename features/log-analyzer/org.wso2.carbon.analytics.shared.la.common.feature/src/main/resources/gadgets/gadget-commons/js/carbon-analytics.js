@@ -861,6 +861,7 @@ AnalyticsClient.prototype.init = function (username, password, svrUrl) {
         this.serverUrl = svrUrl;
     }
     var authHeader = generateBasicAuthHeader(username, password);
+    console.log(authHeader)
     jQuery.ajaxSetup({
                          dataType: DATA_TYPE_JSON,
                          contentType: CONTENT_TYPE_JSON,

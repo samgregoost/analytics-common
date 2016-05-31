@@ -1,0 +1,30 @@
+<%
+(function () {		
+     var carbon = require('carbon');
+     var log = new Log();
+    var TYPE = "type";
+    var APIUtil = Packages.org.wso2.carbon.apimgt.impl.utils.APIUtil;
+    var typeParam = request.getParameter(TYPE);
+ log.info(APIUtil);
+    var tenantID = carbon.server.tenantId();
+    
+    
+
+    var result; 
+    var message;
+    if (typeParam == 8) {
+        if(tenantID != null){
+
+           log.error(tenantID);
+           result = tenantID;
+response.status = 200;
+          var finalResult = {
+                status: 200,
+                message: tenantID
+            };
+           print(finalResult);	
+        }
+    }
+
+}());
+%>
