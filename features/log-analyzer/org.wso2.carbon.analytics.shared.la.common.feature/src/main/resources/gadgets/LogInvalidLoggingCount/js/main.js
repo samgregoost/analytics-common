@@ -222,6 +222,7 @@ function drawInvalidLoggingCountChart() {
                     drawingChartData.push(mockData[i]);
                 }
             }
+
         }
         gadgetData.schema[0].data = drawingChartData;
 

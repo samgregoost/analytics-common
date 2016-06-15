@@ -2,7 +2,7 @@
 <EventStoreConfiguration>
     <TableSchema>
         <ColumnDefinition>
-            <Name>logstream</Name>
+            <Name>tenantID</Name>
             <EnableIndexing>true</EnableIndexing>
             <IsPrimaryKey>false</IsPrimaryKey>
             <EnableScoreParam>false</EnableScoreParam>
